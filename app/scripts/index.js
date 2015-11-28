@@ -1,15 +1,16 @@
 'use strict';
 
 import React from 'react';
+import {Router, Route, IndexRoute} from 'react-router';
 import {render} from 'react-dom'
-import cards from './cards';
 
-let Body = React.createClass({
-  render() {
-    return (
-      <div>Enjoy your new app!</div>
-    )
-  }
-})
+import App from './components/app';
+import Home from './components/home';
 
-render(<Body/>, document.getElementById('container'))
+render((
+  <Router>
+    <Route path='/' component={App}>
+      <IndexRoute component={Home}/>
+    </Route>
+  </Router>
+), document.getElementById('container'))

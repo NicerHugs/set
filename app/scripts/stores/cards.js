@@ -1,6 +1,7 @@
 'use strict';
 
-import alt from './alt';
+import alt from './../alt';
+import _ from 'lodash';
 
 function newCard(values) {
   let proto = {};
@@ -25,14 +26,8 @@ function createCards() {
 class CardStore {
   constructor() {
     this.cards = createCards();
-    this.shuffle();
-  }
-
-  shuffle() {
-    console.log(this.cards)
+    this.cards = _.shuffle(this.cards);
   }
 }
-
-createCards();
 
 export default alt.createStore(CardStore, 'CardStore');
