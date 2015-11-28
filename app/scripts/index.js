@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {render} from 'react-dom'
+import cards from './cards';
 
 let Body = React.createClass({
   render() {
@@ -12,6 +13,3 @@ let Body = React.createClass({
 })
 
 render(<Body/>, document.getElementById('container'))
-
-
-console.log('hi');
