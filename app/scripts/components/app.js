@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import cards from './../stores/cards';
 
 export default React.createClass({
   render() {
