@@ -1,8 +1,10 @@
 'use strict';
 
 import React from 'react';
+
 import CardStore from './../stores/cardStore';
 import CardActions from './../actions/cardActions';
+import Card from './card';
 
 export default React.createClass({
   getInitialState() {
@@ -31,8 +33,15 @@ export default React.createClass({
       .filter(card => {
         return card.displayed;
       }).map(card => {
-      return (<div key={card.key}>card: {JSON.stringify(card)}</div>);
-    });
+        return (
+          <Card key={card.key}
+                id={card.key}
+                shape={card.shape}
+                num={card.num}
+                color={card.color}
+                shade={card.shade}/>
+        );
+      });
     return (
       <div>
         {cards}

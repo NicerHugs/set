@@ -33,12 +33,25 @@ class CardStore {
     this.cards = cards;
     this.bindListeners({
       handleDeal: CardActions.DEAL
-    })
+    });
+    this.exportPublicMethods({
+      getCard: this.getCard
+    });
   }
 
   deal(card) {
     card.dealt = true;
     card.displayed = true;
+  }
+
+  getCard(id) {
+    let {cards} = this.getState();
+    for (let i = 0; i < cards.length; i ++) {
+      if (cards[i].key === id) {
+        return cards[i];
+      }
+    }
+    return null
   }
 
   handleDeal(n) {
