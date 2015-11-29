@@ -13,7 +13,7 @@ export default React.createClass({
 
   componentDidMount() {
     CardStore.listen(this.onChange);
-    CardActions.deal(9);
+    CardActions.deal(12);
   },
 
   componentWillUnmount() {
